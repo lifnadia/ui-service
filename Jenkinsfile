@@ -35,5 +35,12 @@ pipeline {
         sh 'docker build -t lifnadia/ui-service:latest .'
       }
     }
+    stage('push to registry') {
+      steps {
+        sh '''docker login -u lifnadia -p lifnadia29
+docker push lifnadia/ui-service:latest
+'''
+      }
+    }
   }
 }
