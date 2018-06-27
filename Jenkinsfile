@@ -12,8 +12,17 @@ pipeline {
       }
     }
     stage('test1') {
-      steps {
-        sh 'npm run test1'
+      parallel {
+        stage('test1') {
+          steps {
+            sh 'npm run test1'
+          }
+        }
+        stage('test2') {
+          steps {
+            sh 'npm run test2'
+          }
+        }
       }
     }
   }
