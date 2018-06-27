@@ -32,7 +32,7 @@ pipeline {
     }
     stage('Build Docker') {
       steps {
-        sh 'docker build -t lifnadia/ui-service:latest'
+        sh 'docker build -t lifnadia/ui-service:latest .'
       }
     }
   }
